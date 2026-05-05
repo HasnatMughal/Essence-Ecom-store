@@ -89,8 +89,6 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById('root')).render(
   <UserProvider >
-    <CartProvider>
   <RouterProvider router={router}/>
-  </CartProvider>
   </UserProvider>
 )

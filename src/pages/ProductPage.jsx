@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from 'react'
-import { data, useParams } from 'react-router'
+import { useEffect, useState } from 'react'
+import { useParams } from 'react-router'
 import Container from '../components/Container/Container'
 import databaseService from '../auth/config'
 import AddtocartBtn from '../components/AddtocartBtn'
-import { useCart } from '../context/cartContext'
 
 function ProductPage() {
     const [quantity, setQuantity] = useState(0)
@@ -13,7 +12,7 @@ function ProductPage() {
     const imageUrlFromProduct = productDetails ? productDetails.productImage : ""
     const imageUrl = imageUrlFromProduct ? databaseService.showImage(imageUrlFromProduct) : null;
     console.log(imageUrl);
-    const {addToCartFn, removeFromCart, cartItems} = useCart()
+    
 
     console.log(cartQuantity);
     // console.log(quantity)

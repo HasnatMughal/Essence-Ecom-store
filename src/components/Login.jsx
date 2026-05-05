@@ -10,7 +10,7 @@ function Login() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const navigate = useNavigate()
-  const {user,setUser} = useUser() 
+  const {setUser} = useUser() 
 
   const submitHandler = async ({email, password}) => {
     

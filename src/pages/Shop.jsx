@@ -1,22 +1,17 @@
-import React, { useEffect } from "react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import databaseService from "../auth/config";
 import Product from "../components/Product";
 import Container from "../components/Container/Container";
-import { useNavigate, Link } from "react-router";
-import { useCart } from "../context/cartContext";
+import { useNavigate } from "react-router";
+
 
 function Shop() {
   const navigate = useNavigate()
   const { category } = useParams();
   const [products, setProducts] = useState([]);
-  const [categoryProducts, setCategoryProducts] = useState([]);
   const [categoryVar, setCategoryVar] = useState(category);
-  const [isChecked, setisChecked] = useState(false)
   const [selectedCategories, setSelectedCategories ] = useState([])
-  const [loading, setLoading] = useState(true)
-  const {addToCartFn, removeFromCart, cartItems} = useCart()
   const [showFilters, setShowFilters] = useState(false)
 
   console.log(selectedCategories);
