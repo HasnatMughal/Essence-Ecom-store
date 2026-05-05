@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  color: #212121;
+  background-color: #fff;
+}
+
+.formColor{
+  background-color: #f3f3f3;
+}
+
+li{
+  list-style: none;
+}
+
