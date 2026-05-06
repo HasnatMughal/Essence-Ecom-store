@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import AddtocartBtn from "./AddtocartBtn"
 import databaseService from "../auth/config"
-import { useCart } from '../context/cartContext'
+import { useCart } from '../context/CartContext'
 import { Link } from 'react-router'
 
 function Product({id, imgUrl,productName, price, }) {

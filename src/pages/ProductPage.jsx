@@ -3,7 +3,7 @@ import { useParams } from 'react-router'
 import Container from '../components/Container/Container'
 import databaseService from '../auth/config'
 import AddtocartBtn from '../components/AddtocartBtn'
-import { useCart } from '../context/cartContext'
+import { useCart } from '../context/CartContext'
 
 function ProductPage() {
     const [quantity, setQuantity] = useState(0)
