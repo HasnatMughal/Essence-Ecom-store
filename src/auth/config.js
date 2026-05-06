@@ -101,10 +101,9 @@ export class DatabaseService{
         } catch (error) {
             
         }
+        return false 
         }
-         return false 
         //   #### bad me check krna ha #####
-    }
 
     async deleteImage(imageId){
         try {
@@ -113,10 +112,11 @@ export class DatabaseService{
                 imageId
             )
         } catch (error) {
+            console.log(error);
             
         }
         }
-    }
+    
 
     showImage(fileId) {
 return this.storage.getFileView(
