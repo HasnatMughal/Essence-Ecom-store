@@ -23,7 +23,7 @@ export class AuthService{
             return userAccount;
         }
         } catch (error) {
-            console.log("Creating account error on auth.js", error)
+            
         }
     }
 
@@ -32,7 +32,7 @@ try {
            const userLogin =  await this.account.createEmailPasswordSession(email, password)
            return userLogin;
 } catch (error) {
-    console.log("Login error on auth.js", error)
+   
 }
     }
 
@@ -40,7 +40,7 @@ try {
         try {
             const userLogout = await this.account.deleteSessions()
         } catch (error) {
-            console.log("Error while logout on  auth.js", error)
+           
         }
     }
 
@@ -50,7 +50,7 @@ try {
            return user
            
         } catch (error) {
-            console.log("Error getting user in  auth.js", error)
+            
         }
     }
 }

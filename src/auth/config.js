@@ -72,7 +72,7 @@ export class DatabaseService{
                 [Query.equal("category", category)]
             )
         } catch (error) {
-            console.log("Error while listing all products in config.js", error);
+            
             
         }
     }
@@ -84,7 +84,7 @@ export class DatabaseService{
                 conf.appwriteCollection_id,
             )
         } catch (error) {
-            console.log("Error while listing all products in config.js", error);
+            
             
         }
     }
@@ -112,7 +112,7 @@ export class DatabaseService{
                 imageId
             )
         } catch (error) {
-            console.log(error);
+            // console.log(error);
             
         }
         }
