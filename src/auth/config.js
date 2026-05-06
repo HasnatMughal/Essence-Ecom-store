@@ -23,7 +23,7 @@ export class DatabaseService{
                 { productName, price, stock,discountedPrice, productDescription, productImage,category}
             )
         } catch (error) {
-            console.log("Error while creating product in config.js", error)
+            
         }
     }
 
@@ -36,7 +36,7 @@ export class DatabaseService{
             {productName, price, stock,discountedPrice, description, productImage, inStock}
         )
         } catch (error) {
-            console.log("Error while updating product in config.js", error)
+            
         }
     }
 
@@ -60,7 +60,6 @@ export class DatabaseService{
                 conf.appwriteCollection_id,
                   id)
         } catch (error) {
-            console.log("Error while showing single product in config.js", error);
             
         }
     }
@@ -100,7 +99,8 @@ export class DatabaseService{
                 
             )
         } catch (error) {
-            console.log("Error while uploading an image in config.js", error)
+            
+        }
         }
          return false 
         //   #### bad me check krna ha #####
@@ -113,7 +113,8 @@ export class DatabaseService{
                 imageId
             )
         } catch (error) {
-            console.log("Error whil deleting image from storage in config.js", error)
+            
+        }
         }
     }
 

@@ -27,7 +27,7 @@ function Homepage() {
         <section className='p-16 min-h-screen flex items-center flex-col bg-white w-full'>
             <h1 className="md:text-3xl text-xl font-semibold mb-6">Featured Products</h1>
         <div className='grid  sm:grid-cols-2  md:grid-cols-2 lg:grid-cols-4 gap-4 px-8'>
-        {/* {TODO list all featured products} */}
+        
         <FeaturedProducts productName={"Tee shirt" } imgUrl={oversized} price={"14$"} />
         <FeaturedProducts productName={"Full shirt" } imgUrl={shirt} price={"20$"} />
         <FeaturedProducts productName={"Cargo pant" } imgUrl={pant} price={"18$"} />

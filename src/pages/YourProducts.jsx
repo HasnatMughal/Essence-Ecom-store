@@ -11,9 +11,7 @@ function YourProducts() {
         try {
           const fetchProducts =  await databaseService.listAllProducts()
           if(fetchProducts){
-            // console.log(fetchProducts)
             setProducts(fetchProducts.documents)
-            console.log(products);
             
           }
         } catch (error) {

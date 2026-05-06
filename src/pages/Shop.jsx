@@ -16,8 +16,6 @@ function Shop() {
 
   const [showFilters, setShowFilters] = useState(false)
 
-  console.log(selectedCategories);
-
   const filteredProducts = selectedCategories.length === 0 ? products : products.filter((product) => selectedCategories.includes(product.category))
   
   const fetchAllProducts = async () => {
@@ -91,7 +89,6 @@ function Shop() {
           <div className="min-h-screen  grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 w-full gap-4 flex-1 ">
             { filteredProducts
               ? filteredProducts.map((product) => {
-                console.log(product.$id)
                   return (
                     
                     <li key={product.$id} className=" gap-4">

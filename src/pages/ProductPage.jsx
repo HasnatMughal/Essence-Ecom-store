@@ -12,10 +12,7 @@ function ProductPage() {
     const [productDetails, setProductDetails] = useState({})
     const imageUrlFromProduct = productDetails ? productDetails.productImage : ""
     const imageUrl = imageUrlFromProduct ? databaseService.showImage(imageUrlFromProduct) : null;
-    console.log(imageUrl);
     const {addToCartFn, removeFromCart, cartItems} = useCart()
-
-    console.log(cartQuantity);
     // console.log(quantity)
     
 
@@ -37,7 +34,6 @@ if(id){
 
 
     },[id])
-console.log(productDetails)
     
   return (
     <>

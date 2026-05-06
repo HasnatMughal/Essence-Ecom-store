@@ -5,8 +5,6 @@ import Container from '../components/Container/Container';
 
 function Cart() {
   const {addToCartFn, removeFromCart, cartItems} = useCart()
-  // const [items, setitems] = useState(cartItems)
-  console.log(cartItems);
   
     
   return (

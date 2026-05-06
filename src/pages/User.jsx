@@ -4,11 +4,11 @@ import authentication from "../auth/auth";
 import { NavLink, useParams, Link } from "react-router";
 import LogoutBtn from "../components/LogoutBtn";
 import Container from "../components/Container/Container";
+import conf from "../../conf/conf";
 
 function User() {
   const { user, setUser } = useUser();
   const { username } = useParams();
-  console.log(user);
 
   const [usersName, setusersName] = useState(user.name);
   async function fetchuser() {
@@ -22,7 +22,7 @@ function User() {
     fetchuser();
   }, []);
 
-  const isAdmin = user?.email === "adminecom@gmail.com";
+  const isAdmin = user?.email === conf.adminEmail
   return (
     <>
      <Container>
