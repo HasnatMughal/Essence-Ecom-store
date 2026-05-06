@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import CartItem from '../components/CartItem'
+import { useCart } from '../context/cartContext'
 import Container from '../components/Container/Container';
 
 function Cart() {

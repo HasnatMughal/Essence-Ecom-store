@@ -3,7 +3,8 @@ const conf = {
     appwriteProject_id : String(import.meta.env.VITE_PROJECT_ID),
     appwriteDatabase_id : String(import.meta.env.VITE_DATABASE_ID),
     appwriteBucket_id : String(import.meta.env.VITE_BUCKET_ID),
-    appwriteCollection_id : String(import.meta.env.VITE_COLLECTION_ID)
+    appwriteCollection_id : String(import.meta.env.VITE_COLLECTION_ID),
+    adminEmail : String(import.meta.env.VITE_ADMIN_EMAIL)
 }
 
 export default conf

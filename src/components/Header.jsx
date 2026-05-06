@@ -3,11 +3,12 @@ import Logo from './Logo'
 import { NavLink, Link } from 'react-router'
 import {FaShoppingCart, FaTimes, FaUser, FaBars} from "react-icons/fa"
 import { useUser } from '../context/UserContext'
+import conf from '../../conf/conf'
 
 
 function Header() {
    const {user} = useUser()
-   const isAdmin = user?.email === import.meta.env.VITE_ADMIN_EMAIL 
+   const isAdmin = user?.email === conf.adminEmail 
    const [isOpen, setIsOpen] = useState(false)
    
 

@@ -1,11 +1,13 @@
 import React, { useState } from 'react'
 import AddtocartBtn from "./AddtocartBtn"
 import databaseService from "../auth/config"
+import { useCart } from '../context/cartContext'
 import { Link } from 'react-router'
 
 function Product({id, imgUrl,productName, price, }) {
   
   const imageUrl = databaseService.showImage(imgUrl)
+  const {addToCartFn, removeFromCart, cartItems} = useCart()
   const [cartQuantity, setCartQuantity] = useState(1)
 
   // console.log("cart items on shop",cartItems);
@@ -26,10 +28,9 @@ function Product({id, imgUrl,productName, price, }) {
         </div>
         </div>
         </Link>
-        <AddtocartBtn onClickFn={() => {
-          // TODO: implement addToCart functionality
-          console.log('Add to cart:', {id, productName, price, cartQuantity})
-        }} />
+        <AddtocartBtn onClickFn={() => addToCartFn(
+         id ,productName,price, cartQuantity,imageUrl
+        )} />
         
         
         

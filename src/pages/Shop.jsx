@@ -1,10 +1,10 @@
-import { useEffect, useState } from "react";
+import React, { useEffect } from "react";
+import { useState } from "react";
 import { useParams } from "react-router";
 import databaseService from "../auth/config";
 import Product from "../components/Product";
 import Container from "../components/Container/Container";
 import { useNavigate } from "react-router";
-
 
 function Shop() {
   const navigate = useNavigate()
@@ -12,6 +12,8 @@ function Shop() {
   const [products, setProducts] = useState([]);
   const [categoryVar, setCategoryVar] = useState(category);
   const [selectedCategories, setSelectedCategories ] = useState([])
+ 
+
   const [showFilters, setShowFilters] = useState(false)
 
   console.log(selectedCategories);

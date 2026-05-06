@@ -13,7 +13,7 @@ import Container from '../components/Container/Container'
 import { useNavigate } from 'react-router'
 
 function Homepage() {
-    const {user, setUser} = useUser()
+    const {user} = useUser()
     const navigate = useNavigate()
     
   return (

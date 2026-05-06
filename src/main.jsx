@@ -19,6 +19,7 @@ import ProtectedRoute from './components/ProtectedRoute.jsx'
 import IsAdmin from './components/IsAdmin.jsx'
 import About from "./pages/About.jsx"
 import Contact from './pages/Contact.jsx'
+import CartProvider from './context/cartContext.jsx'
 
 
 
@@ -89,6 +90,8 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById('root')).render(
   <UserProvider >
-  <RouterProvider router={router}/>
+    <CartProvider>
+<RouterProvider router={router}/>
+    </CartProvider>
   </UserProvider>
 )
