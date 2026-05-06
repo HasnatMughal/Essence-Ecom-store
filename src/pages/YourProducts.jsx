@@ -30,7 +30,7 @@ function YourProducts() {
                 getAllProducts()
             }
         } catch (error) {
-            console.log("error while removing product", error)
+            
         }
     }
   return (

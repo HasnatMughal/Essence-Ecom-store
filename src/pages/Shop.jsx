@@ -23,7 +23,7 @@ function Shop() {
     setProducts(result.documents);
   };
 
-  // console.log(products)
+
 
   const fetchCategoryProducts = async () => {
     try {
