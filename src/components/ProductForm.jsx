@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import databaseService from '../auth/config'
 import Input from './Input'
-import { data } from 'react-router'
+import { data, useNavigate } from 'react-router'
 import { ID } from 'appwrite'
 function ProductForm( ) {
     const [productname, setProductname] = useState('')
@@ -12,6 +12,7 @@ function ProductForm( ) {
     const [imageFile, setImageFile] = useState(null)
     const [inStock, setInStock] = useState(false)
     // console.log(category)
+    const navigate = useNavigate()
    async function handleSubmit(){
         try {
             
@@ -19,6 +20,8 @@ function ProductForm( ) {
             const file = await databaseService.imageUpload(imageFile)
             if(file){
                 const prdoduct = await databaseService.createProduct(ID.unique(),{productName : productname, price : price,stock: stock,productDescription : description,  productImage : file.$id,category: category})
+                navigate('/')
+
             } else {
                 return
             }
