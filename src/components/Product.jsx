@@ -15,7 +15,7 @@ function Product({id, imgUrl,productName, price, }) {
   // console.log(imageUrl);
   
   return( 
-    <div className='w-48 md:w-full lg:w-full p-4   shadow-md bg-white flex flex-col justify-between'>
+    <div className='w-full  p-4 shadow-md bg-white flex flex-col justify-between'>
     <Link to={`/product/${id}`}>
       <div>
       

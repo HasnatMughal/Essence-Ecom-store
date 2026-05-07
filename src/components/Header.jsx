@@ -38,10 +38,10 @@ function Header() {
             <div className='flex flex-col items-start absolute right-1/5 bg-white min-w-32  mt-4  p-4  uppercase text-sm  gap-3 md:hidden ease-in-out transition-all   md:gap-8'>
         
          
-            <NavLink className="hover:border-b" to="/" >Home</NavLink>
-            <NavLink className="hover:border-b" to="/shop" >Shop</NavLink>
-            <NavLink className="hover:border-b" to="/about" >About</NavLink>
-            <NavLink className="hover:border-b" to="/contact" >Contact</NavLink>
+            <NavLink onClick={() => setIsOpen(!isOpen)} className="hover:border-b" to="/" >Home</NavLink>
+            <NavLink onClick={() => setIsOpen(!isOpen)} className="hover:border-b" to="/shop" >Shop</NavLink>
+            <NavLink onClick={() => setIsOpen(!isOpen)} className="hover:border-b" to="/about" >About</NavLink>
+            <NavLink onClick={() => setIsOpen(!isOpen)} className="hover:border-b" to="/contact" >Contact</NavLink>
         </div>
          )
         }

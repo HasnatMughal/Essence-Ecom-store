@@ -3,7 +3,7 @@ import Login from '../components/Login'
 
 function LoginPage() {
    return (
-    <div className='min-h-screen flex items-center justify-center  '>
+    <div className=' flex items-center justify-center  '>
         <Login />
     </div>
   )

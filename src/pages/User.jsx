@@ -9,6 +9,8 @@ import conf from "../../conf/conf";
 function User() {
   const { user, setUser } = useUser();
   const { username } = useParams();
+  console.log(user);
+  
 
   const [usersName, setusersName] = useState(user.name);
   async function fetchuser() {

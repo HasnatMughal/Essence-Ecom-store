@@ -4,7 +4,7 @@ import AddtocartBtn from './AddtocartBtn';
 function FeaturedProducts({imgUrl, productName, price,  }) {
      
   return (
-   <div className='min-w-48 sm:min-w-48 md:min-w-64 w-full p-4 uppercase shadow-md bg-white flex flex-col justify-between'>
+   <div className='min-w-36 md:min-w-48 lg:min-w-62 p-4 uppercase shadow-md bg-white flex flex-col justify-between'>
         <div className='w-full '>
             <img src={imgUrl} className='w-full ' alt="" />
         </div>

@@ -1,34 +1,35 @@
 import React from 'react'
 
-function CartItem({id,productName, price, quantity, productImage, removeFn}) {
+// CartItem.jsx
+function CartItem({productName, price, quantity, productImage, removeFn}) {
   return (
-    <>
-    <div className='w-7xl  h-26   flex justify-between items-center p-4 rounded shadow-md gap-4 bg-white'>
-        <div className='flex justify-between items-center gap-4'>
-            <div className='w-20 rounded-2xl'>
-            <img src={productImage} alt="" className='rounded-2xl' />
-            </div>
-            <div className='flex items-center flex-col'>
-                <h2 className='text-xs'>Product Name</h2>
-            <h2 className='text-xl'>{productName}</h2>
-            </div>
+    <div className='w-full flex flex-col sm:flex-row justify-between items-center p-4 rounded-xl shadow-sm gap-4 bg-white border border-gray-100'>
+      
+      <div className='flex items-center gap-4 flex-1'>
+        <div className='w-16 h-16 shrink-0 rounded-lg overflow-hidden bg-gray-50'>
+          <img src={productImage} alt="" className='w-full h-full object-cover' />
         </div>
-        <div className='flex items-center flex-col '>
-            <h2 className='text-xs'>Quantity</h2>
-            <h2 className='text-xl'>{quantity}</h2>
+        <div>
+          <p className='text-xs text-gray-400 uppercase tracking-wide'>Product</p>
+          <p className='text-base font-medium text-gray-800'>{productName}</p>
         </div>
-        <div className='flex justify-between items-center gap-4'>
-            <div className='flex flex-col items-center'>
-                <h2 className="text-xs">Price</h2>
-            <h2 className='text-2xl text-gray-500'>
-                {`$${price}`}
-            </h2>
-            </div>
-            <button className='border p-2 ' onClick={removeFn} >X</button>
+      </div>
+
+      <div className='flex items-center gap-8 sm:gap-12'>
+        <div className='text-center'>
+          <p className='text-xs text-gray-400 uppercase tracking-wide'>Qty</p>
+          <p className='text-base font-medium'>{quantity}</p>
         </div>
+        <div className='text-center'>
+          <p className='text-xs text-gray-400 uppercase tracking-wide'>Price</p>
+          <p className='text-base font-medium text-gray-700'>${price}</p>
+        </div>
+        <button onClick={removeFn} className='text-gray-400 hover:text-red-500 transition-colors text-lg'>✕</button>
+      </div>
+
     </div>
-    </>
   )
 }
 
 export default CartItem
+

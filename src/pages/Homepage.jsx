@@ -24,9 +24,9 @@ function Homepage() {
         <h2 className='md:text-xl sm:text-lg md:w-full text-xs w-full'>Evaluate your wardrobe with our premium essentaials.</h2>
         <button className='bg-emerald-600 md:w-32 md:h-12 rounded-xs hover:bg-emerald-700 w-18 h-8 text-xs md:text-lg  text-white' onClick={() => navigate("/shop")}>Shop now</button>
         </div>
-        <section className='p-16 min-h-screen flex items-center flex-col bg-white w-full'>
-            <h1 className="md:text-3xl text-xl font-semibold mb-6">Featured Products</h1>
-        <div className='grid  sm:grid-cols-2  md:grid-cols-2 lg:grid-cols-4 gap-4 px-8'>
+        <section className='min-h-screen   bg-white  w-full'>
+            <h1 className="md:text-3xl text-xl font-semibold text-center mb-6">Featured Products</h1>
+        <div className='w-full grid grid-cols-2  sm:grid-cols-2  md:grid-cols-4 lg:grid-cols-4 gap-6 '>
         
         <FeaturedProducts productName={"Tee shirt" } imgUrl={oversized} price={"14$"} />
         <FeaturedProducts productName={"Full shirt" } imgUrl={shirt} price={"20$"} />
