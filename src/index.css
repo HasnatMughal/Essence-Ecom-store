@@ -15,3 +15,11 @@ li{
   list-style: none;
 }
 
+@keyframes shrink {
+  from { width: 100%; }
+  to { width: 0%; }
+}
+
+.progress-bar {
+  animation: shrink 2s linear forwards;
+}

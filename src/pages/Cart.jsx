@@ -9,6 +9,7 @@ function Cart() {
   const { removeFromCart, cartItems } = useCart()
   const total = cartItems.reduce((sum, item) => sum + Number(item.price) * item.quantity, 0)
 
+
   return (
     <Container>
       <div className='min-h-screen w-full flex flex-col mt-8 px-2 md:px-0'>

@@ -5,6 +5,8 @@ import databaseService from "../auth/config";
 import Product from "../components/Product";
 import Container from "../components/Container/Container";
 import { useNavigate } from "react-router";
+import { useCart } from "../context/CartContext";
+import AddtoCartNotification from "../components/AddtoCartNotification";
 
 function Shop() {
   const navigate = useNavigate()
@@ -12,9 +14,12 @@ function Shop() {
   const [products, setProducts] = useState([]);
   const [categoryVar, setCategoryVar] = useState(category);
   const [selectedCategories, setSelectedCategories ] = useState([])
- 
-
+  const [noProductmsg, setnoProductMsg] = useState('')
+  const [loading, setLoading] = useState(true)
   const [showFilters, setShowFilters] = useState(false)
+
+  const {showNotification} = useCart()
+  
 
   const filteredProducts = selectedCategories.length === 0 ? products : products.filter((product) => selectedCategories.includes(product.category))
   
@@ -40,8 +45,10 @@ function Shop() {
  useEffect(() => {
   if(!categoryVar){
     fetchAllProducts()
+    
   } else if(categoryVar){
     fetchCategoryProducts()
+   
   }
  },[categoryVar])
    
@@ -87,7 +94,7 @@ function Shop() {
   </div>
 </div>
           <div className="  grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 w-full gap-4  ">
-            { filteredProducts
+            {  filteredProducts.length > 0
               ? filteredProducts.map((product) => {
                   return (
                     
@@ -104,9 +111,12 @@ function Shop() {
                   );
                 })
               : 
-              []}
+              <p className="text-gray-500 text-lg text-center mx-auto">No Products to show</p>}
           </div>
         </div>
+<div className="flex self-end absolute items-end justify-end justify-self-end">
+          {showNotification && <AddtoCartNotification />}
+          </div>
       </Container>
     </>
   );

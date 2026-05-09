@@ -10,25 +10,24 @@ function Signup() {
     const [email, setEmail] = useState('')
       const [password, setPassword] = useState('')
       const [username, setUsername] = useState('')
+      const [errorMsg, setErrorMsg] = useState('')
       const navigate = useNavigate()
 
       const {setUser} = useUser()
 
       const submitHandler = async({name, email,password}) => {
         try {
-             const userAlreadyExists = await authentication.checkUser()
-             if(userAlreadyExists){
-                navigate("/login")
-             } else {
+             
                 const userCreated = await authentication.createAccount({email, password, name})
            if(userCreated){
                setUser(userCreated)
             navigate("/")
            }
-             }
+             
            
         } catch (error) {
-            console.log('Error in creating user in Sign up component', error)
+
+           setErrorMsg(error.message)
         }
       }
   return (
@@ -52,6 +51,7 @@ function Signup() {
         Password
         </label>
         <Input type="password" value={password} onChangeFn={(e) => setPassword(e.target.value)}/>
+        {errorMsg && <p className='text-red-600 '>{errorMsg}</p>}
         <button className='w-full bg-blue-600 text-white p-3 rounded-lg hover:bg-blue-700 ' type='submit'>Sign up</button>
         </form>
         </div>

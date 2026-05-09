@@ -24,10 +24,8 @@ function Login() {
       const loggedInUser = await authentication.checkUser()
       setUser(loggedInUser)
       navigate("/")
-     }
+     } 
     } catch (error) {
-      console.log(error);
-      
       setErrorMsg(error.message)
       
     }

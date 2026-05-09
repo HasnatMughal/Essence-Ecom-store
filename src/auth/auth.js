@@ -23,7 +23,7 @@ export class AuthService{
             return userAccount;
         }
         } catch (error) {
-            
+            throw error
         }
     }
 
@@ -32,7 +32,7 @@ try {
            const userLogin =  await this.account.createEmailPasswordSession(email, password)
            return userLogin;
 } catch (error) {
-   
+   throw error
 }
     }
 
