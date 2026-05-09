@@ -1,10 +1,13 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import AddtoCartNotification from "../components/AddtoCartNotification"
 
 const cartContext = createContext()
 
 export default function CartProvider({children}){
-    const [cartItems, setCartItems] = useState([])
+    const [cartItems, setCartItems] = useState(() => {
+        const oldCartItems = localStorage.getItem("cartItems")
+        return(oldCartItems ? JSON.parse(oldCartItems) : [])
+    })
     const [showNotification, setShowNotification] = useState(false)
 
     const addToCartFn = (id, productName, price, quantity, productImage) => {
@@ -38,13 +41,14 @@ export default function CartProvider({children}){
                 
             })
             setCartItems(upadtedCart)
-            setShowNotification(true)
+            
+            
+        }
+        
+        setShowNotification(true)
              setTimeout(() => {
                 setShowNotification(false)
             },2000)
-        }
-        
-        
         
 
       
@@ -54,7 +58,9 @@ export default function CartProvider({children}){
     const removeFromCart = (id) => {
         setCartItems(cartItems.filter((cartItem) => cartItem.productId !== id))
     }
-    
+    useEffect(() => {
+                localStorage.setItem("cartItems", JSON.stringify(cartItems))
+            },[cartItems])
     return(
         <cartContext.Provider value={{addToCartFn, removeFromCart, cartItems,showNotification}}>
             {children}

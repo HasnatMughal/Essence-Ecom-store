@@ -45,10 +45,10 @@ function Shop() {
  useEffect(() => {
   if(!categoryVar){
     fetchAllProducts()
-    
+    setLoading(false)
   } else if(categoryVar){
     fetchCategoryProducts()
-   
+    setLoading(false)
   }
  },[categoryVar])
    
@@ -58,7 +58,7 @@ function Shop() {
   return (
     <>
       <Container>
-        <h1 className="lg:text-3xl md:text-2xl text-xl text-center  p-2 mb-5 font-semibold">Shop All Products</h1>
+        <h1 className="lg:text-3xl md:text-2xl text-xl text-center  p-2 mb-5 font-semibold">Shop - ESSENCE</h1>
         <div className="flex flex-col md:flex-row md:items-start lg:items-start  lg:flex-row  gap-4 items-center  lg:min-w-7xl   md:min-h-screen lg:min-h-screen min-h-0 w-full">
           <div className="flex flex-col  md:w-32 lg:w-64 shrink-0 self-start md:border-r lg:border-r border-gray-200 bg-white md:min-h-screen lg:min-h-screen">
   {/* <div className="p-4 border-b border-gray-200 md:block lg:block hidden">
@@ -94,7 +94,7 @@ function Shop() {
   </div>
 </div>
           <div className="  grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 w-full gap-4  ">
-            {  filteredProducts.length > 0
+            { loading ? <p>Loading...</p> : filteredProducts.length > 0
               ? filteredProducts.map((product) => {
                   return (
                     
